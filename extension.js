@@ -1,6 +1,6 @@
 'use strict';
 
-document
+const renderCommentsMarkup = () => document
     .querySelectorAll('.comments .one__comment p')
     .forEach(node => {
         console.log(node);
@@ -25,3 +25,7 @@ document
             '</span>'
         );
     });
+
+renderCommentsMarkup();
+// TODO this is really dirty - it would be much better to somehow listen for the new comments being added to the page
+setInterval(renderCommentsMarkup, 4000);
