@@ -1,0 +1,17 @@
+{
+
+  "manifest_version": 2,
+  "name": "signaly.cz text markup",
+  "version": "1.0",
+
+  "description": "Adds support for rendering custom markup in signaly.cz comments",
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.signaly.cz/*"
+      ],
+      "js": ["extension.js"]
+    }
+  ]
+}
