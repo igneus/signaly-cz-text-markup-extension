@@ -5,7 +5,7 @@ const renderCommentsMarkup = () => document
     .forEach(node => {
         console.log(node);
         node.innerHTML = node.innerHTML.replace(
-                /&lt;([A-Fa-f0-9]{6})&gt;/,
+                /&lt;([A-Fa-f0-9]{6})&gt;/g,
             (match, group1) => {
                 const colour = group1.toLowerCase();
                 let title = null;
@@ -21,7 +21,7 @@ const renderCommentsMarkup = () => document
             }
         );
         node.innerHTML = node.innerHTML.replace(
-                /&lt;\/([A-Fa-f0-9]{6})&gt;/,
+                /&lt;\/([A-Fa-f0-9]{6})&gt;/g,
             '</span>'
         );
     });
