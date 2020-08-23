@@ -3,7 +3,6 @@
 const renderCommentsMarkup = () => document
     .querySelectorAll('.comments .one__comment p')
     .forEach(node => {
-        console.log(node);
         node.innerHTML =
             node.innerHTML
             .replace(
