@@ -18,7 +18,11 @@ const renderCommentsMarkup = () => document
                     (title ? (' title="' + title + '"') : '') +
                     '>';
             })
-            .replace(/&lt;\/([A-Fa-f0-9]{6})&gt;/g, '</span>');
+            .replace(/&lt;\/([A-Fa-f0-9]{6})&gt;/g, '</span>')
+            .replace(/&lt;img:(.+?)&gt;/g, (match, group1) => {
+                return '<img src="'+group1+'">'
+            })
+        ;
     });
 
 renderCommentsMarkup();
