@@ -3,7 +3,7 @@
 const renderCommentsMarkup = () => document
     .querySelectorAll('.comments .one__comment p')
     .forEach(node => {
-        node.innerHTML =
+        const newHtml =
             node.innerHTML
             .replace(/&lt;([A-Fa-f0-9]{6})&gt;/g, (match, group1) => {
                 const colour = group1.toLowerCase();
@@ -20,9 +20,13 @@ const renderCommentsMarkup = () => document
             })
             .replace(/&lt;\/([A-Fa-f0-9]{6})&gt;/g, '</span>')
             .replace(/&lt;img:(.+?)&gt;/g, (match, group1) => {
-                return '<img src="'+group1+'">'
+                return '<img src="'+group1+'">';
             })
         ;
+
+        if (newHtml != node.innerHTML) {
+            node.innerHTML = newHtml;
+        }
     });
 
 renderCommentsMarkup();
